@@ -19,9 +19,9 @@ FAIL_COLOR='\033[31;01m'
 
 # Power down and up iface to force network scan (and recover a clean list ;)).
 # Also `nmcli **-p** dev wifi list` might work (-p = force scan).
-#nmcli nm wifi off
-#nmcli nm wifi on
-#sleep 1
+nmcli nm wifi off
+nmcli nm wifi on
+sleep 1
 if ! nmcli -p dev wifi list | grep -q "$ARDRONE_NAME"
 then
         echo "$FAIL_COLOR [FAIL] $NO_COLOR No wifi nammed '$ARDRONE_NAME'"
